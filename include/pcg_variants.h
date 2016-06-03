@@ -45,6 +45,30 @@
     #define PCG_HAS_128BIT_OPS 1
 #endif
 
+#if defined(_M_X64)
+    #include <intrin.h>
+    #pragma intrinsic(_umul128)
+
+    typedef struct pcg128_t
+    {
+        uint64_t high_, low_;
+    } pcg128_t;
+    #define PCG_128BIT_CONSTANT(high,low) pcg128_constant( high, low )
+    #define PCG_HAS_128BIT_MUL 1
+    inline pcg128_t pcg128_constant( uint64_t high, uint64_t low ) {
+        struct pcg128_t cst;
+        cst.high_ = high;
+        cst.low_ = low;
+        return cst;
+    }
+
+    inline pcg128_t pcg128_mul64( uint64_t a, uint64_t b ) {
+        struct pcg128_t res;
+        res.high_ = _umul128( a, b, &res.low_ );
+        return res;
+    }
+#endif
+
 #if __GNUC_GNU_INLINE__  &&  !defined(__cplusplus)
     #error Nonstandard GNU inlining semantics. Compile with -std=c99 or better.
     /* We could instead use macros PCG_INLINE and PCG_EXTERN_INLINE
