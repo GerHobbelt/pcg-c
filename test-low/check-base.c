@@ -27,6 +27,10 @@
 
 #include "entropy.h"                    /* Wrapper around /dev/random */
 
+// This source file is supposed to be #included by other sources to produce a tailored test/demo application.
+// It should compile to nil on its own.
+#if defined(XX_PREDECLS)
+
 XX_PREDECLS
 
 int main(int argc, char** argv)
@@ -147,3 +151,5 @@ int main(int argc, char** argv)
 
     return 0;
 }
+
+#endif // XX_PREDECLS
