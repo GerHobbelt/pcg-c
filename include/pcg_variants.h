@@ -348,7 +348,6 @@ inline pcg128_t pcg_output_xsl_rr_rr_128_128(pcg128_t state)
 #define PCG_STATE_SETSEQ_8_INITIALIZER      { 0x9bU, 0xdbU }
 #define PCG_STATE_SETSEQ_16_INITIALIZER     { 0xe39bU, 0x5bdbU }
 #define PCG_STATE_SETSEQ_32_INITIALIZER     { 0xec02d89bU, 0x94b95bdbU }
-#endif
 #define PCG_STATE_SETSEQ_64_INITIALIZER                                        \
     { 0x853c49e6748fea9bULL, 0xda3e39cb94b95bdbULL }
 #if PCG_HAS_128BIT_OPS
