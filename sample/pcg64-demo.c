@@ -32,6 +32,8 @@
 #include "pcg_variants.h"
 #include "entropy.h"                    /* Wrapper around /dev/random */
 
+#if PCG_HAS_128BIT_OPS
+
 int main(int argc, char** argv)
 {
     /* Read command-line options */
@@ -147,3 +149,13 @@ int main(int argc, char** argv)
 
     return 0;
 }
+
+#else
+
+int main()
+{
+	printf("This platform does not support 128-bit integers.\n");
+	return 1;
+}
+
+#endif
