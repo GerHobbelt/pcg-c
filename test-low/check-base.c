@@ -105,7 +105,6 @@ int main(int argc, char** argv)
         }
         printf("\n");
         
-
         /* Toss some coins */
         printf("  Coins: ");
         for (int i = 0; i < 65; ++i)
