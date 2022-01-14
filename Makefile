@@ -25,7 +25,7 @@ all:
 	cd test-high; $(MAKE)
 	cd sample; $(MAKE)
 
-PREFIX?=/usr/local
+PREFIX ?= /usr/local
 
 install: all
 	install src/libpcg_random.a $(PREFIX)/lib
