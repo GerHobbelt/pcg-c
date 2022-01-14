@@ -27,7 +27,7 @@
 
 #include "pcg_variants.h"
 #if PCG_HAS_128BIT_OPS
-    #include "check-base.c"
+    #include "../test-low/check-base.c"
 #else
     #include <stdio.h>
     int main()

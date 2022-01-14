@@ -26,4 +26,4 @@
             pcg32u_advance_r(&rng, delta)
 
 #include "pcg_variants.h"
-#include "check-base.c"
+#include "../test-low/check-base.c"
