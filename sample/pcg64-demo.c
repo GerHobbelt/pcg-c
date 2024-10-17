@@ -152,7 +152,7 @@ int main(int argc, char** argv)
 
 #else
 
-int main()
+int main(void)
 {
 	printf("This platform does not support 128-bit integers.\n");
 	return 1;

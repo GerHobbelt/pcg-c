@@ -30,7 +30,7 @@
     #include "check-base.c"
 #else
     #include <stdio.h>
-    int main()
+    int main(void)
     {
         printf("This platform does not support 128-bit integers.\n");
         return 1;
